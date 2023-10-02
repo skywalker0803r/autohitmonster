@@ -27,7 +27,7 @@ def 招怪():
         # 按下F7键
         pyautogui.keyDown('f7')
         pyautogui.keyUp('f7')
-        time.sleep(1)  # 等待一秒，给游戏一些时间来响应
+        time.sleep(0.5)  # 等待一秒，给游戏一些时间来响应
         # 在屏幕上查找非戰鬥中的图像
         if pyautogui.locateOnScreen(Image.open('非戰鬥中.PNG')) is None:
             print("招喚怪物成功,正式進入戰鬥")
@@ -59,45 +59,45 @@ def 戰鬥():
         if monster_a_location is not None:
             # 按下黑洞爆發
             pyautogui.keyDown('f6');pyautogui.keyUp('f6')
-            time.sleep(1) # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             a_x, a_y = pyautogui.center(monster_a_location)
-            pyautogui.moveTo(a_x, a_y, 1, pyautogui.easeInOutQuad)
+            pyautogui.moveTo(a_x, a_y, 0.5, pyautogui.easeInOutQuad)
             pyautogui.mouseDown(); pyautogui.mouseUp()
-            time.sleep(1)  # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5)  # 等待一段时间，避免连续点击造成问题
 
         # 如果找到怪物B图像
         elif monster_b_location is not None:
             # 按下黑洞爆發
             pyautogui.keyDown('f6');pyautogui.keyUp('f6')
-            time.sleep(1) # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             b_x, b_y = pyautogui.center(monster_b_location)
-            pyautogui.moveTo(b_x, b_y, 1, pyautogui.easeInOutQuad)
+            pyautogui.moveTo(b_x, b_y, 0.5, pyautogui.easeInOutQuad)
             pyautogui.mouseDown(); pyautogui.mouseUp()
-            time.sleep(1)  # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5)  # 等待一段时间，避免连续点击造成问题
 
         # 如果找到怪物C图像
         elif monster_c_location is not None:
             # 按下黑洞爆發
             pyautogui.keyDown('f6');pyautogui.keyUp('f6')
-            time.sleep(1) # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             c_x, c_y = pyautogui.center(monster_c_location)
-            pyautogui.moveTo(c_x, c_y, 1, pyautogui.easeInOutQuad)
+            pyautogui.moveTo(c_x, c_y, 0.5, pyautogui.easeInOutQuad)
             pyautogui.mouseDown(); pyautogui.mouseUp()
-            time.sleep(1)  # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5)  # 等待一段时间，避免连续点击造成问题
 
         # 如果找到怪物D图像
         elif monster_d_location is not None:
             # 按下黑洞爆發
             pyautogui.keyDown('f6');pyautogui.keyUp('f6')
-            time.sleep(1) # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5) # 等待一段时间，避免连续点击造成问题
             # 点击怪物D图像
             d_x, d_y = pyautogui.center(monster_d_location)
-            pyautogui.moveTo(d_x, d_y, 1, pyautogui.easeInOutQuad)
+            pyautogui.moveTo(d_x, d_y, 0.5, pyautogui.easeInOutQuad)
             pyautogui.mouseDown(); pyautogui.mouseUp()
-            time.sleep(1)  # 等待一段时间，避免连续点击造成问题
+            time.sleep(0.5)  # 等待一段时间，避免连续点击造成问题
 
         else:
             # 如果屏幕上不再出现(A, B, C)怪物图像，退出循环
@@ -105,9 +105,9 @@ def 戰鬥():
             break
 
 切換至目標視窗()
-time.sleep(2)
+time.sleep(0.5)
 while True:
     招怪()
-    time.sleep(2)
+    time.sleep(0.5)
     戰鬥()
-    time.sleep(2)
+    time.sleep(0.5)

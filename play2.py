@@ -39,11 +39,10 @@ def 戰鬥():
     monster_A_path = Image.open('白臭鼬.PNG')
     monster_B_path = Image.open('白鱷魚.PNG')
     monster_C_path = Image.open('黑貓咪.PNG')
+    monster_D_path = Image.open('黑鱷魚.PNG')
     
     # 定義模糊比對參數
     confidence_threshold = 0.8
-    offset_x = -10
-    offset_y = +10
 
     # 循环直到屏幕上不再出现(A, B, C)怪物图像
     while True:
@@ -53,12 +52,13 @@ def 戰鬥():
         monster_b_location = pyautogui.locateOnScreen(monster_B_path,confidence=confidence_threshold)
         # 搜索怪物C图像
         monster_c_location = pyautogui.locateOnScreen(monster_C_path,confidence=confidence_threshold)
+        # 搜索怪物D图像
+        monster_d_location = pyautogui.locateOnScreen(monster_D_path,confidence=confidence_threshold)
 
         # 如果找到怪物A图像
         if monster_a_location is not None:
             # 按下黑洞爆發
-            pyautogui.keyDown('f6')
-            pyautogui.keyUp('f6')
+            pyautogui.keyDown('f6');pyautogui.keyUp('f6')
             time.sleep(1) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             a_x, a_y = pyautogui.center(monster_a_location)
@@ -69,8 +69,7 @@ def 戰鬥():
         # 如果找到怪物B图像
         elif monster_b_location is not None:
             # 按下黑洞爆發
-            pyautogui.keyDown('f6')
-            pyautogui.keyUp('f6')
+            pyautogui.keyDown('f6');pyautogui.keyUp('f6')
             time.sleep(1) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             b_x, b_y = pyautogui.center(monster_b_location)
@@ -81,8 +80,7 @@ def 戰鬥():
         # 如果找到怪物C图像
         elif monster_c_location is not None:
             # 按下黑洞爆發
-            pyautogui.keyDown('f6')
-            pyautogui.keyUp('f6')
+            pyautogui.keyDown('f6');pyautogui.keyUp('f6')
             time.sleep(1) # 等待一段时间，避免连续点击造成问题
             # 点击怪物A图像
             c_x, c_y = pyautogui.center(monster_c_location)
@@ -90,12 +88,21 @@ def 戰鬥():
             pyautogui.mouseDown(); pyautogui.mouseUp()
             time.sleep(1)  # 等待一段时间，避免连续点击造成问题
 
+        # 如果找到怪物D图像
+        elif monster_d_location is not None:
+            # 按下黑洞爆發
+            pyautogui.keyDown('f6');pyautogui.keyUp('f6')
+            time.sleep(1) # 等待一段时间，避免连续点击造成问题
+            # 点击怪物D图像
+            d_x, d_y = pyautogui.center(monster_d_location)
+            pyautogui.moveTo(d_x, d_y, 1, pyautogui.easeInOutQuad)
+            pyautogui.mouseDown(); pyautogui.mouseUp()
+            time.sleep(1)  # 等待一段时间，避免连续点击造成问题
+
         else:
             # 如果屏幕上不再出现(A, B, C)怪物图像，退出循环
             print('找不到任何場上怪物')
             break
-
-
 
 切換至目標視窗()
 time.sleep(2)
